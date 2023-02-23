@@ -1,0 +1,36 @@
+{
+	"name": "DestinationDataset_he7",
+	"properties": {
+		"annotations": [],
+		"type": "SqlPoolTable",
+		"schema": [
+			{
+				"name": "ProductID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "ProductName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Category",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ListPrice",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "products"
+		},
+		"sqlPool": {
+			"referenceName": "sqltvrbeuw",
+			"type": "SqlPoolReference"
+		}
+	}
+}
