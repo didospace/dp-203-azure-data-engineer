@@ -1,0 +1,17 @@
+{
+	"name": "Create User_Roles_to_DedicatedPool",
+	"properties": {
+		"content": {
+			"query": "CREATE USER purviewtvrbeuw FROM EXTERNAL PROVIDER;\n GO\n\n EXEC sp_addrolemember 'db_datareader', purviewtvrbeuw;\n GO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "sqltvrbeuw",
+				"poolName": "sqltvrbeuw"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
