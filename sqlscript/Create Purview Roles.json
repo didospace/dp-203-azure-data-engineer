@@ -1,0 +1,17 @@
+{
+	"name": "Create Purview Roles",
+	"properties": {
+		"content": {
+			"query": " CREATE LOGIN purviewtvrbeuw FROM EXTERNAL PROVIDER;\n GO\n\n CREATE USER purviewtvrbeuw FOR LOGIN purviewtvrbeuw;\n GO\n\n ALTER ROLE db_datareader ADD MEMBER purviewtvrbeuw;\n GO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "lakedb",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
