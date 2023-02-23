@@ -1,0 +1,17 @@
+{
+	"name": "create lakedb",
+	"properties": {
+		"content": {
+			"query": "CREATE DATABASE lakedb;\nGO\n\nUSE lakedb;\nGO\n\nCREATE CREDENTIAL [https://datalaketvrbeuw.dfs.core.windows.net/files/products/products.csv]\nWITH IDENTITY='Managed Identity';\nGO\n\nCREATE VIEW products_csv\nAS\nSELECT *\nFROM\n    OPENROWSET(\n        BULK 'https://datalaketvrbeuw.dfs.core.windows.net/files/products/products.csv',\n        FORMAT = 'CSV',\n        HEADER_ROW = TRUE,\n        PARSER_VERSION = '2.0'\n    ) AS [result];\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "master",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
